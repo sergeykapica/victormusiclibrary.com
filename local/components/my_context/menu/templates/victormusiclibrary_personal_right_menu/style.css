@@ -1,0 +1,72 @@
+#user-profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 4rem;
+    padding: 0.5rem;
+    background-color: #f5c425;
+}
+
+.profile-menu-item {
+    display: block;
+    width: 3rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.profile-menu-item:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.profile-menu-item:not(#user-bill-wrapper) {
+    height: 3rem;
+    background-image: url(images/user-profile-icons.png);
+    background-repeat: no-repeat;
+    background-size: 15rem;
+    transition: transform .2s ease-in 0s;
+    -webkit-transition: transform .2s ease-in 0s;
+    -o-transition: transform .2s ease-in 0s;
+    -moz-transition: transform .2s ease-in 0s;
+}
+
+.profile-menu-item:not(#user-bill-wrapper):hover {
+    transform: translate(0, -5px);
+    -ms-transform: translate(0, -5px);
+    -webkit-transform: translate(0, -5px);
+    -o-transform: translate(0, -5px);
+    -moz-transform: translate(0, -5px);
+}
+
+.user-bill {
+    display: block;
+    margin-bottom: .2rem;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+#user-bill-icon {
+    width: 3rem;
+    height: 3rem;
+    background-image: url(images/user-profile-icons.png);
+    background-repeat: no-repeat;
+    background-size: 15rem;
+}
+
+#user-profile {
+    background-position: -3rem 0;
+}
+
+#user-profile-pay {
+    background-position: -6rem 0;
+}
+
+#user-profile-basket {
+    background-position: -9rem 0;
+}
+
+#user-profile-settings {
+    background-position: -12rem 0;
+}

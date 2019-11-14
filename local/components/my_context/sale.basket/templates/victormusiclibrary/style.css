@@ -1,0 +1,108 @@
+.sbasket-wrapper {
+    width: 98%;
+}
+
+.sbasket-wrapper-blocks, .sbasket-header-blocks {
+    width: 100%;
+    float: left;
+}
+
+.sbasket-filter-wrapper {
+    width: 48%;
+}
+
+.sbasket-data-wrapper {
+    width: 50%;
+    margin-left: 2%;
+    text-align: right;
+}
+
+.sbasket-total {
+    display: inline-block;
+    margin-right: 2%;
+    font-size: 1.5rem;
+}
+
+.filter-input {
+    display: block;
+    width: 65%;
+    margin-top: 0.5rem;
+    padding: .5rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: none;
+    outline: 0;
+    background-color: rgba(232, 202, 158, 0.5);
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+    border: 1px solid transparent;
+    transition: border-color .3s ease 0s, width .3s ease-in 0s;
+    -webkit-transition: border-color .3s ease 0s, width .3s ease-in 0s;
+    -o-transition: border-color .3s ease 0s, width .3s ease-in 0s;
+    -moz-transition: border-color .3s ease 0s, width .3s ease-in 0s;
+}
+
+.filter-input:focus {
+    width: 85%;
+    border-color: #000;
+}
+
+.sbasket-header {
+    margin-bottom: 2rem;
+}
+
+#sbasket-table {
+    border-collapse: collapse;
+}
+
+.sbasket-cell {
+    padding: 1rem;
+}
+
+.select-checkbox-wrapper {
+    width: 2rem;
+    height: 2rem;
+}
+
+.sbasket-cell-base {
+    width: 33.33%;
+    text-align: left;
+}
+
+.sbasket-cell-base .ruble-icon {
+    height: .7rem;
+}
+
+.sbasket-photo {
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: center;
+}
+
+.sbasket-header-string {
+    background-color: #CCB28B;
+    border-bottom: 2px solid #000;
+}
+
+.sbasket-content-string {
+    border-bottom: 1px solid rgba(94, 94, 94, 0.4);
+}
+
+.sbasket-content .pagination-items {
+    width: 50%;
+}
+
+.delete-good-button {
+    float: left;
+    margin-top: -0.7rem;
+    padding: 0.7rem 1rem !important;
+}
+
+.basket-pagination .answer-error {
+    width: 50%;
+    text-align: left;
+}

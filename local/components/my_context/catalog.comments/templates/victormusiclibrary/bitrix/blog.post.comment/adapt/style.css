@@ -1,0 +1,125 @@
+div.blog-comment-form {width: 100% !important;}
+
+div.blog-comment .blog-author {
+  font-size: 0.85em;
+}
+
+.blog-comment-content {
+  font-size: 13px;
+  overflow: hidden!important;
+  padding-top: 0 !important;
+}
+
+div.blog-comment-buttons input {
+  font-size: 13px !important;
+  padding: 0 3px !important;
+}
+
+.blog-post-rating {
+  padding: 10px 0 0 0;
+}
+
+.workarea_wrap {
+  padding: 0 !important;
+}
+
+.blog-author-avatar {
+    float: left;
+    margin-right: 10px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.blog-comment-info {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.blog-comment-meta {
+    padding: .5rem 0;
+    font-size: .95em;
+}
+
+.comment-functions-icon {
+    display: inline-block;
+    width: .95em;
+    height: .95em;
+    background: url(/local/templates/victormusiclibrary/images/icons/comment-functions-icons.png) no-repeat;
+    background-size: 5.69em;
+    vertical-align: middle;
+}
+
+.functions-icon-reply {
+    background-position: 0 0;
+}
+
+.functions-icon-edit {
+    background-position: -.95em 0;
+}
+
+.functions-icon-hide {
+    background-position: -1.9em 0;
+}
+
+.functions-icon-delete {
+    background-position: -2.84em 0;
+}
+
+.functions-icon-spam {
+    background-position: -3.8em 0;
+}
+
+.blog-add-comment {
+    padding-top: 1.5em;
+}
+
+.bx_bt_button, #post-button {
+    display: inline-block;
+    padding: 0.5rem 1rem !important;
+    background-color: #C9644B;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+    transition: border-color .5s ease 0s, background-color .5s ease 0s;
+    -webkit-transition: border-color .5s ease 0s, background-color .5s ease 0s;
+    -o-transition: border-color .5s ease 0s, background-color .5s ease 0s;
+    -moz-transition: border-color .5s ease 0s, background-color .5s ease 0s;
+}
+
+.bx_bt_button:hover, #post-button:hover {
+    border-color: #C9644B;
+    background-color: #000;
+}
+
+#post-button {
+    cursor: pointer;
+}
+
+div.blog-post-edit-form, div.blog-comment-fields {
+    background-color: #b3a594;
+    border: 2px solid #8f8477;
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+}
+
+.feed-add-post-form {
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+}
+
+.feed-add-post-text {
+    padding: 0 !important;
+}
+
+.bxhtmled-toolbar-cnt {
+    background-image: linear-gradient(to bottom,#fbfdfd 0%,#2f3741 100%);
+}

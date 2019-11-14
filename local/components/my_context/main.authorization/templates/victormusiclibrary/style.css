@@ -1,0 +1,81 @@
+.authorization-form-wrapper {
+    width: 50%;
+    margin: 0 25% 1rem 25%;
+}
+
+.authorization-form-section {
+    margin-bottom: 2rem;
+}
+
+.authorization-field-answer, .forgotten-field-answer {
+    position: relative;
+}
+
+.authorization-input-wrapper {
+    position: relative;
+    padding-left: 2.5rem;
+    height: 2rem;
+}
+
+.authorization-input-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    background: url(images/icons/authorization-icons.png) no-repeat;
+    background-size: 6rem;
+}
+
+#login-input-icon {
+    background-position: 0 0;
+}
+
+#password-input-icon {
+    background-position: -2rem 0;
+}
+
+#email-input-icon {
+    background-position: -4rem 0;
+}
+
+.authorization-input {
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: none;
+    outline: 0;
+    background-color: rgba(232, 202, 158, 0.5);
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+}
+
+.authorization-input {
+    border: 1px solid transparent;
+    transition: border-color .3s ease 0s;
+    -webkit-transition: border-color .3s ease 0s;
+    -o-transition: border-color .3s ease 0s;
+    -moz-transition: border-color .3s ease 0s;
+}
+
+.authorization-captcha-wrapper {
+    margin-bottom: 1rem;
+}
+
+.authorization-captcha-image {
+    width: 100%;
+    height: auto;
+}
+
+.forgotten-password-button {
+    margin: 1rem 0;
+    color: #1495a3;
+}
+
+#forgotten-password-wrapper {
+    display: none;
+}

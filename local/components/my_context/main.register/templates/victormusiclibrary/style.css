@@ -1,0 +1,130 @@
+.register-form-section {
+    margin-bottom: 2rem;
+}
+
+.register-form-section {
+    width: 100%;
+    float: left;
+}
+
+.register-form-section img.calendar-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.custom-radio-wrapper {
+    float: left;
+}
+
+.register-input-separator {
+    width: .5rem;
+    height: .5rem;
+    float: left;
+}
+
+.register-field-question {
+    width: 20%;
+    margin-right: 2%;
+    float: left;
+}
+
+.register-field-answer {
+    position: relative;
+    width: 78%;
+    float: left;
+}
+
+.register-input, .register-select {
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: none;
+    outline: 0;
+    background-color: rgba(232, 202, 158, 0.5);
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+}
+
+.register-input {
+    border: 1px solid transparent;
+    transition: border-color .3s ease 0s;
+    -webkit-transition: border-color .3s ease 0s;
+    -o-transition: border-color .3s ease 0s;
+    -moz-transition: border-color .3s ease 0s;
+}
+
+.register-input:focus {
+    border-color: #000;
+}
+
+#radio-icon-m, #radio-icon-f {
+    width: 1.5rem;
+    height: 1.5rem;
+    float: left;
+    background: url(/local/templates/victormusiclibrary/images/icons/gender-icons.png);
+    background-size: 3rem;
+}
+
+#radio-icon-m {
+    background-position: 0 0;
+}
+
+#radio-icon-f {
+    background-position: -1.5rem 0;
+}
+
+.register-file-wrapper {
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(232, 202, 158, 0.5);
+    border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+}
+
+.register-file {
+    display: none;
+}
+
+.register-file-title, .register-file-name {
+    width: 50%;
+    float: left;
+    padding: .5rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.register-file-title {
+    background-color: #b89f7b;
+    cursor: pointer;
+}
+
+.user-rules-button {
+    color: #1495a3;
+    word-wrap: break-word;
+}
+
+.register-captcha-wrapper {
+    margin-bottom: 1rem;
+}
+
+.register-captcha-image {
+    width: 100%;
+    height: auto;
+}
+
+.custom-radio-label {
+    width: 1rem;
+    height: 1rem;
+}
+
+.custom-checkbox-label {
+    width: 100%;
+    float: left;
+}
