@@ -19,9 +19,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $error = false;
         $oBasket = new CSaleBasket;
         
-        /*foreach($goodsIDs as $goodID)
+        foreach($goodsIDs as $goodID)
         {
-            if($oBasket->Delete($goodID))
+            if(!$oBasket->Delete($goodID))
             {
                 $error = true;
             }
@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         else
         {
             echo false;
-        }*/
+        }
     }
 }
 ?>

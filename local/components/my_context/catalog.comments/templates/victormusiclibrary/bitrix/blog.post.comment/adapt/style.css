@@ -79,6 +79,7 @@ div.blog-comment-buttons input {
 
 .bx_bt_button, #post-button {
     display: inline-block;
+    height: auto !important;
     padding: 0.5rem 1rem !important;
     background-color: #C9644B;
     color: #fff;

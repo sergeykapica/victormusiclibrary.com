@@ -17,6 +17,10 @@
     
     $countItems = 0;
     
+    /*echo '<pre>';
+    print_r($arResult);
+    echo '</pre>';*/
+    
     foreach($arResult as $arItem):
     ?> 
         <?if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel):?>
@@ -42,7 +46,7 @@
                     <?$countItems++;?>
                     <li class="head-menu-item <?=( $countItems !== $depthOneItemCount ? 'menu-item-indentation' : '' );?> <?=( $arItem["SELECTED"] ? 'head-menu-active' : '' );?>"><a href="<?=$arItem["LINK"]?>" class="menu-item-link"><?=$arItem["TEXT"]?></a></li>
                 <?else:?>
-                    <li class="head-menu-item submenu-item <?=( $arItem["SELECTED"] ? 'head-menu-active' : '' );?>"><a href="<?=$arItem["LINK"]?>" class="menu-item-link"><?=$arItem["TEXT"]?></a></li>
+                    <li class="head-menu-item submenu-item <?=( $arItem["SELECTED"] ? 'head-menu-active' : '' );?>"><a href="http://<?=$arItem["ADDITIONAL_LINKS"][0];?>" class="menu-item-link"><?=$arItem["TEXT"]?></a></li>
                 <?endif?>
 
             <?else:?>

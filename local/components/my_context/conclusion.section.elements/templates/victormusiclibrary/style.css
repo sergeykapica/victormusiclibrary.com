@@ -1,4 +1,5 @@
 .goods-list-item {
+    display: table-cell;
     position: relative;
     width: 20%;
     padding: 20px;
@@ -13,6 +14,10 @@
     height: 100%;
     background-color: #636362;
     opacity: 0.5;
+}
+
+.goods-items-consolidate {
+    display: table-row;
 }
 
 .goods-list-item > div {

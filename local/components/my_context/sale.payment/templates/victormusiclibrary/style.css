@@ -1,0 +1,38 @@
+.paysystems-wrapper {
+    border-left: .2rem solid #000;
+    padding-left: 1rem;
+}
+
+.paysystems-items {
+    padding: 0;
+    margin: 0;
+}
+
+.paysystems-item {
+    display: block;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.paysystems-item .custom-radio-wrapper {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.paysystems-item-group {
+    position: relative;
+    display: inline-block;
+    min-height: 2rem;
+    padding: .5rem 0 1rem 2.5rem;
+    border-bottom-width: .2rem;
+    border-bottom-style: solid;
+}
+
+.paysystems-item-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}

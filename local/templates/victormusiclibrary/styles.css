@@ -804,6 +804,7 @@ html, body {
 }
 
 .custom-radio-circle {
+    position: relative;
     width: 1rem;
     height: 1rem;
     border: 2px solid #000;
@@ -816,14 +817,16 @@ html, body {
 
 .radio-circle-inner {
     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -.25rem;
     width: 0.5rem;
     height: 0.5rem;
     background-color: #C9644B;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    vertical-align: middle;
-    margin-top: -.25rem;
 }
 
 .custom-radio-input {
@@ -1238,41 +1241,4 @@ html, body {
 .empty-items-text {
     font-weight: 700;
     letter-spacing: .1rem;
-}
-
-/*Pagination*/
-
-.pagination-wrapper {
-    position: relative;
-    text-align: center;
-    min-height: 3rem;
-    padding-top: 0.7rem;
-    margin: 2rem 0;
-}
-
-.pagination-items {
-    display: inline-block;
-}
-
-.pagination-item {
-    padding: 0.7rem 1rem;
-    background-color: rgba(232, 202, 158, 0.5);
-    border-radius: .2rem;
-    -webkit-border-radius: .2rem;
-    -moz-border-radius: .2rem;
-    font-weight: 700;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: border-color .3s ease 0s;
-    -webkit-transition: border-color .3s ease 0s;
-    -o-transition: border-color .3s ease 0s;
-    -moz-transition: border-color .3s ease 0s;
-}
-
-.pagination-item:hover {
-    border-color: #C9644B;
-}
-
-.pagination-item-indentation {
-    margin-right: 1rem;
 }

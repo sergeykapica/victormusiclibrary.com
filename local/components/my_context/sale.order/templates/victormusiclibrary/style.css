@@ -1,0 +1,35 @@
+.order-submit-button {
+    text-decoration: none;
+    float: right;
+}
+
+.order-section {
+    margin-bottom: 1.5rem;
+}
+
+.order-head {
+    width: 98%;
+}
+
+.order-content {
+    width: 98%;
+    float: left;
+}
+
+.order-headline, .sbasket-total {
+    width: 49%;
+    float: left;
+}
+
+.order-headline {
+    margin-right: 2%;
+}
+
+.sbasket-total {
+    margin-top: .7em;
+}
+
+.sbasket-total {
+    margin-right: 0 !important;
+    text-align: right;
+}

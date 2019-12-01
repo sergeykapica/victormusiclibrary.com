@@ -5,6 +5,23 @@ if(CModule::IncludeModule('sale') && CModule::IncludeModule('iblock'))
 {
     $arResult = array();
     
+    $navParams = array(
+        'bShowAll' => false,
+        'nPageSize' => 2
+    );
+    
+    if(isset($arParams['FILTER_VALUE']))
+    {
+        $_SERVER['REQUEST_URI'] = preg_match('/&/', $_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : $_SERVER['REQUEST_URI'] . '&';
+        
+        preg_match('/(.+?)\?SEARCH_VALUE=(.+?)&/i', $_SERVER['REQUEST_URI'], $finds);
+        
+        $urlWithoutQueryString = $finds[1];
+        $searchValueQuery = $finds[2];
+        
+        $navParams['BASE_LINK'] = $urlWithoutQueryString . '?SEARCH_VALUE=' . $searchValueQuery . '&PAGINATION_PAGE=1';
+    }
+    
     $selectFields = array(
         'ID',
         'PRODUCT_ID',
@@ -30,7 +47,20 @@ if(CModule::IncludeModule('sale') && CModule::IncludeModule('iblock'))
         'DISCOUNT_PRICE'
     );
     
-    $basket = CSaleBasket::GetList(array('DATE_INSERT' => 'DESC'), array(), false, false, $selectFields);
+    $filterFields = array(
+        "FUSER_ID" => CSaleBasket::GetBasketUserID(),
+        "LID" => SITE_ID,
+        "ORDER_ID" => "NULL"
+    );
+    
+    if(!isset($arParams['FILTER_VALUE']))
+    {
+        $basket = CSaleBasket::GetList(array('DATE_INSERT' => 'DESC'), $filterFields, false, $navParams, $selectFields);
+    }
+    else
+    {
+        $basket = CSaleBasket::GetList(array('DATE_INSERT' => 'DESC'), $filterFields, false, false, $selectFields);
+    }
     
     if($basket)
     {
@@ -40,8 +70,14 @@ if(CModule::IncludeModule('sale') && CModule::IncludeModule('iblock'))
         {
             $productIDs[] = $basketItem['PRODUCT_ID'];
             $basketItem['PRICE'] = round($basketItem['PRICE']);
+            $arResult['TOTAL_ORDER_PRICE'] += $basketItem['PRICE'];
             
             $arResult['BASKET_ITEMS'][] = $basketItem;
+        }
+        
+        if(!isset($arParams['FILTER_VALUE']))
+        {
+            $arResult['BASKET_ITEM_PAGINATION'] = $basket->GetPageNavStringEx($backNavigation = false, 'Goods', 'victormusiclibrary', false, false, $navParams);
         }
         
         if(!empty($productIDs))
@@ -81,6 +117,9 @@ if(CModule::IncludeModule('sale') && CModule::IncludeModule('iblock'))
                         $basketItem = array_merge($basketItem, $arResult['PRODUCT_ITEMS'][$basketItem['PRODUCT_ID']]);
                     }
                     
+                    define('SITE_CODE', 's1');
+                    $arResult['CURRENT_CURRENCY'] = CSaleLang::GetLangCurrency(SITE_CODE);
+                    
                     // if is filter value then filtration
                     
                     if(isset($arParams['FILTER_VALUE']))
@@ -92,9 +131,26 @@ if(CModule::IncludeModule('sale') && CModule::IncludeModule('iblock'))
                         
                         foreach($arResult['BASKET_ITEMS'] as $basketItemKey => &$basketItem)
                         {
-                            if(!preg_match('/' . $arParams['FILTER_VALUE'] . '/', $basketItem['NAME']) && !preg_match('/' . $arParams['FILTER_VALUE'] . '/', $basketItem['NAME']))
+                            if(!preg_match('/' . strtolower($arParams['FILTER_VALUE']) . '/i', strtolower($basketItem['NAME'])) && !preg_match('/' . strtolower($arParams['FILTER_VALUE']) . '/i', strtolower($basketItem['NAME'])))
                             {
                                 unset($arResult['BASKET_ITEMS'][$basketItemKey]);
+                            }
+                        }
+                        
+                        if(!empty($arResult['BASKET_ITEMS']))
+                        {
+                            $oCDBResult = new CDBResult;
+                            $oCDBResult->InitFromArray($arResult['BASKET_ITEMS']);
+                            $oCDBResult->NavStart($navParams['nPageSize']);
+                            $oCDBResult->bShowAll = false;
+                            
+                            $arResult['BASKET_ITEM_PAGINATION'] = $oCDBResult->GetPageNavStringEx($backNavigation = false, 'Goods', 'victormusiclibrary', false, false, $navParams);
+                            
+                            $arResult['BASKET_ITEMS'] = array();
+                            
+                            while($basketItem = $oCDBResult->GetNext())
+                            {
+                                $arResult['BASKET_ITEMS'][] = $basketItem;
                             }
                         }
                     }

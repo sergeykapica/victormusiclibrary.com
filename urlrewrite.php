@@ -72,4 +72,12 @@ $arUrlRewrite=array (
     'PATH' => '/news/index.php',
     'SORT' => 100,
   ),
+  9 =>
+  array (
+    'CONDITION' => '#^/personal/order/download/(.+)$#',
+    'RULE' => 'FILE_ID=$1',
+    'ID' => '',
+    'PATH' => '/personal/order/download.php',
+    'SORT' => 100,
+  ),
 );

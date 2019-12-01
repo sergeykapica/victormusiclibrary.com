@@ -13,11 +13,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         unset($_SESSION['REGISTRATION_USER_DATA_TEMP']['GENERATED_CODE']);
         
-        if($USER->Add($_SESSION['REGISTRATION_USER_DATA_TEMP']))
+        $userID = $USER->Add($_SESSION['REGISTRATION_USER_DATA_TEMP']);
+        
+        if($userID)
         {
             unset($_SESSION['REGISTRATION_USER_DATA_TEMP']);
             
-            LocalRedirect('/?REGISTER_CONFIRM=1');
+            // add sale account for user
+            
+            if(CModule::IncludeModule('sale'))
+            {
+                $userFields = array(
+                    'USER_ID' => $userID,
+                    'TIMESTAMP_X' => date('d.m.Y H:i:s'),
+                    'CURRENCY' => CSaleLang::GetLangCurrency(SITE_CODE)
+                );
+
+                if(CSaleUserAccount::Add($userFields))
+                {
+                    LocalRedirect('/?REGISTER_CONFIRM=1');
+                }
+                else
+                {
+                    LocalRedirect('/?REGISTER_CONFIRM=0');
+                }
+            }
+            else
+            {
+                LocalRedirect('/?REGISTER_CONFIRM=0');
+            }
         }
         else
         {

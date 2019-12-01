@@ -1,0 +1,25 @@
+.order-result-message {
+    width: 98%;
+    padding: 1rem;
+}
+
+#order-result-success {
+    background-color: rgba(30, 180, 0, 0.2);
+}
+
+#order-result-failed {
+    background-color: rgba(223, 0, 0, 0.2);
+}
+
+#order-result-files {
+    background-color: rgba(223, 180, 0, 0.2);
+    margin-top: 1rem;
+}
+
+#oresult-files-wrapper {
+    border-right: 5px dashed #000;
+}
+
+.oresult-file-url {
+    color: #0d5473;
+}

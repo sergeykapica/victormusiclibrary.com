@@ -1,5 +1,13 @@
 <?
-require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
+if(isset($_GET['PAGINATION_PAGE']))
+{
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetTitle("Корзина");
+}
+else
+{
+    require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
+}
 ?>
 
 <?if(isset($_GET['SEARCH_VALUE'])):?>
@@ -11,3 +19,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_befo
         )
     );?>
 <?endif;?>
+
+<?
+if(isset($_GET['PAGINATION_PAGE']))
+{
+    require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
+}
+?>
